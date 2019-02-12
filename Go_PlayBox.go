@@ -22,7 +22,7 @@ The easiest way to install is to run go get -u golang.org/x/text.
 You can also manually git clone the repository to $GOPATH/src/golang.org/x/text.
 */
 
-// MyMIDI ...
+// MyMIDI ... MyMIDI struct
 type MyMIDI struct {
 	initData   int
 	MIDIMAPPER int
@@ -100,16 +100,15 @@ type ScaleDefs struct {
 	note  string
 }
 
-// PlayData ... PlayData struct
+// PlayData ... struct PlayData
 type PlayData struct {
 	scale  string
 	note   string
 	length int
 }
 
+// Load the scale definition file.
 func loadDefFile(filename string) []ScaleDefs {
-	// Load the scale definition file.
-
 	fp, err := os.Open(filename)
 	if os.IsNotExist(err) {
 		fmt.Printf("%s not found.", filename)
@@ -141,9 +140,8 @@ func loadDefFile(filename string) []ScaleDefs {
 	return defs
 }
 
+// Load the score file.
 func loadPlayFile(filename string) []PlayData {
-	// Load the score file.
-
 	fp, err := os.Open(filename)
 	if os.IsNotExist(err) {
 		fmt.Printf("%s not found.", filename)
@@ -182,8 +180,8 @@ func loadPlayFile(filename string) []PlayData {
 	return pData
 }
 
+// Search the musical scale character string and set the note number.
 func replaceScale2Freq(defs *[]ScaleDefs, pData *[]PlayData) {
-	// Search the musical scale character string and set the note number.
 	for i := 0; i < len(*pData); i++ {
 		scale := strings.Split((*pData)[i].scale, ",")
 		for _, temp := range scale {
