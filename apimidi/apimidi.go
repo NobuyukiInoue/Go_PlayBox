@@ -1,4 +1,4 @@
-package api_midi
+package apimidi
 
 import (
 	"fmt"

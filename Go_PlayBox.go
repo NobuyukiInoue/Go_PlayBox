@@ -1,6 +1,6 @@
 package main
 
-import "./api_midi"
+import "./apimidi"
 
 import (
 	"bufio"
@@ -179,7 +179,7 @@ func main() {
 	fmt.Printf("intSize = %d, initData = 0x%04x\n", intSize, initData)
 
 	// Initialize the MyMIDI struct and functions
-	pm := new(api_midi.MyMIDI)
+	pm := new(apimidi.MyMIDI)
 	pm.Init(initData)
 
 	fmt.Printf("Load Done. Play start!!\n")
